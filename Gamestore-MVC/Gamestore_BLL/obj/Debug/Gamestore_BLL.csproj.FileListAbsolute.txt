@@ -1,0 +1,6 @@
+C:\Users\RWilliams\source\repos\Gamestore-MVC\Gamestore_BLL\bin\Debug\Gamestore_BLL.dll
+C:\Users\RWilliams\source\repos\Gamestore-MVC\Gamestore_BLL\bin\Debug\Gamestore_BLL.pdb
+C:\Users\RWilliams\source\repos\Gamestore-MVC\Gamestore_BLL\obj\Debug\Gamestore_BLL.csprojAssemblyReference.cache
+C:\Users\RWilliams\source\repos\Gamestore-MVC\Gamestore_BLL\obj\Debug\Gamestore_BLL.csproj.CoreCompileInputs.cache
+C:\Users\RWilliams\source\repos\Gamestore-MVC\Gamestore_BLL\obj\Debug\Gamestore_BLL.dll
+C:\Users\RWilliams\source\repos\Gamestore-MVC\Gamestore_BLL\obj\Debug\Gamestore_BLL.pdb

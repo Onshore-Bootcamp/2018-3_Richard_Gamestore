@@ -1,0 +1,68 @@
+﻿@using Gamestore_MVC.Models
+@model User
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+
+
+    <h2>User Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    UserName
+                </th>
+
+                <th>
+                    Email
+                </th>
+                <th>
+                    Role
+                </th>
+                <th>
+                    Update
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Model.UserName
+                </td>
+
+                <td>
+                    @Model.Email
+                </td>
+                <td>
+                    @Model.RoleName
+                </td>
+                @if ((long)Session["RoleId"] >= 3)
+
+                {
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "UpdateUser", "Account", new { username = Model.UserName }, null)
+                    </td>
+                }
+                @if ((long)Session["RoleId"] == 5)
+                {
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", "Account", new { username = Model.UserName }, new { onclick = "return confirm(' are you sure')" })
+                    </td>
+                }
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+    @Html.ActionLink("Click to Return to All Users", "AllUsers", "Account", null, null)
+</div>

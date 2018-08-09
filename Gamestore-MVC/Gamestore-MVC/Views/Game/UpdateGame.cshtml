@@ -1,0 +1,45 @@
+﻿@using Gamestore_MVC.Models
+@model Game
+@{
+    ViewBag.Title = "UpdateGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+
+    <h2 align="center">UpdateGame</h2>
+    @using (Html.BeginForm("UpdateGame", "Game", FormMethod.Post))
+    {
+        <div>
+            @Html.HiddenFor(model => Model.GameId)
+            @Html.DisplayFor(model => Model.Title)
+            <div>
+                @Html.TextBoxFor(model => Model.Title, new { @class = "form-control" })
+                @Html.LabelFor(model => Model.Title, "", new { @class = "text-danger" })
+            </div>
+            @Html.DisplayFor(model => Model.Description)
+            <div>
+                @Html.TextBoxFor(model => Model.Description, new { @class = "form-control" })
+                @Html.LabelFor(model => Model.Description, "", new { @class = "text-danger" })
+            </div>
+            @Html.DisplayFor(model => Model.DevelopingCompany)
+            <div>
+                @Html.TextBoxFor(model => Model.DevelopingCompany, new { @class = "form-control" })
+                @Html.LabelFor(model => Model.DevelopingCompany, "", new { @class = "text-danger" })
+            </div>
+            @Html.DisplayFor(model => Model.Condition)
+            <div>
+                @Html.TextBoxFor(model => Model.Condition, new { @class = "form-control" })
+                @Html.LabelFor(model => Model.Condition, "", new { @class = "text - danger" })
+            </div>
+            @Html.DisplayFor(model => Model.Price)
+            <div>
+                @Html.TextBoxFor(model => Model.Price, new { @class = "form-control" })
+                @Html.LabelFor(model => Model.Price, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group hol">
+                <input type="submit" value="Update" />
+            </div>
+        </div>
+    }
+
+</div>

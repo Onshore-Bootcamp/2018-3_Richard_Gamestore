@@ -1,0 +1,54 @@
+﻿@using Gamestore_MVC.Models
+@model Game
+@{
+    ViewBag.Title = "Create Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+
+
+    @using (Html.BeginForm("AddGame", "Game", FormMethod.Post))
+    {
+        <div>
+            <h4>
+                Title
+            </h4>
+            <div>
+                @Html.TextBoxFor(model => Model.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Title, "", new { @class = "text-danger" })
+            </div>
+            <h4>
+                Description
+            </h4>
+            <div class="form-group">
+                @Html.TextAreaFor(model => Model.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Description, "", new { @class = "text-danger" })
+            </div>
+            <h4>
+                Condition
+            </h4>
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.Condition, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Condition, "", new { @class = "text-danger" })
+            </div>
+            <h4>
+                Developing Company
+            </h4>
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.DevelopingCompany, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.DevelopingCompany, "", new { @class = "text-danger" })
+            </div>
+            <h4>
+                Price
+            </h4>
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Price, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" value="Add" />
+            </div>
+        </div>
+    }
+</div>
+

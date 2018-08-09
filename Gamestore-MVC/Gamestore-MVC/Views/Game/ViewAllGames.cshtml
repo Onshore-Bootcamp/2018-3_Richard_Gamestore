@@ -1,0 +1,64 @@
+﻿@using Gamestore_MVC.Models
+@model List<Game>
+@{
+    ViewBag.Title = "ViewAllGames";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+    <h2 class="align-center">View All Games</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Developing company
+                </th>
+                <th>
+                    Condition
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (Game displayObject in Model)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.ActionLink($"{displayObject.Title}", "GameDetails", "Game", new { GameId = displayObject.GameId }, null)
+                    </td>
+                    <td>
+                        @displayObject.Description
+                    </td>
+                    <td>
+                        @displayObject.DevelopingCompany
+                    </td>
+                    <td>
+                        @displayObject.Condition
+                    </td>
+                    <td>
+                        @displayObject.Price
+                    </td>
+                    <td>
+                        @Html.ActionLink("Add To Cart", "AddToCart", "Cart", new { GameId = displayObject.GameId }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</div>

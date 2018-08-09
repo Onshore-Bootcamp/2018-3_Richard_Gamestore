@@ -1,0 +1,61 @@
+﻿@using Gamestore_MVC.Models
+@model List<Order>
+@{
+    ViewBag.Title = "ViewOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+
+    <h2 align="center">ViewOrder</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    Email Address
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Phone
+                </th>
+
+            </tr>
+        </thead>
+        <tbody class="h9">
+            @foreach (Order displayObject in Model)
+            {
+                <tr class="table">
+                    <td>
+                        @displayObject.UserName
+                    </td>
+
+                    <td>
+                        @displayObject.EmailAddress
+                    </td>
+                    <td>
+                        @displayObject.Address
+                    </td>
+                    <td>
+                        @displayObject.Phone
+                    </td>
+                    <td></td>
+                    @if ((long)Session["RoleId"] == 5)
+                    {
+                        <td>
+                            @Html.ActionLink("Remove Order", "RemoveOrder", "Order", new { OrderId = displayObject.OrderId }, null)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Update Order", "UpdateOrder", "Order", new { OrderId = displayObject.OrderId }, null)
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

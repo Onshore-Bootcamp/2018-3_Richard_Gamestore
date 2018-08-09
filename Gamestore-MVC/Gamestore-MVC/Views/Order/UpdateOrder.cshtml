@@ -1,0 +1,44 @@
+﻿@using Gamestore_MVC.Models
+@model Order
+@{
+    ViewBag.Title = "UpdateOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+
+    <h2 align="center">UpdateOrder</h2>
+    @using (Html.BeginForm("UpdateOrder", "Order", FormMethod.Post))
+    {
+        <div class="form-horizontal form-group">
+            @Html.HiddenFor(model => Model.OrderId)
+            @Html.HiddenFor(model => Model.UserId)
+
+            <p>
+                Email Address
+            </p>
+            <div class="form-horizontal">
+                <div class="hi">
+                    @Html.TextBoxFor(model => Model.EmailAddress, new { @class = "from-control" })
+                    @Html.ValidationMessageFor(model => Model.EmailAddress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <p>Address</p>
+            <div class="form-control form-group">
+                @Html.TextBoxFor(model => Model.Address, new { @class = "from-control" })
+                @Html.ValidationMessageFor(model => Model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <p>Phone Number</p>
+        <div>
+            @Html.TextBoxFor(model => Model.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.Phone, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group hol">
+            <input type="submit" value="Update" />
+        </div>
+
+    }
+</div>
+
+

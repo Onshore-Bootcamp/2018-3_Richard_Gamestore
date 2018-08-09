@@ -1,0 +1,50 @@
+﻿@using Gamestore_MVC.Models
+@model  Order
+@{
+    ViewBag.Title = "CreateOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div align="center">
+    <div class="h2">
+        <h2 align="center">CheckOut</h2>
+    </div>
+</div>
+@using (Html.BeginForm("CreateOrder", "Order", FormMethod.Post))
+{
+    <div class="form-group well">
+        
+        <div><h4> Email Address</h4>
+            @Html.TextBoxFor(model => Model.EmailAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.EmailAddress, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <h4> Address</h4>
+            <div>
+                @Html.TextBoxFor(model => Model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Address, "", new { @class = "text-danger" })
+            </div>
+            <h4>Phone Number</h4>
+            <div>
+                @Html.TextBoxFor(model => Model.Phone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Phone, "", new { @class = "text-danger" })
+            </div> 
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" value="Buy" />
+            </div>
+        </div>
+    </div>
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+﻿
+@using Gamestore_MVC.Models
+@model List<User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <h2 align="center">All Users</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    Role
+                </th>
+                <th>
+                    View Details
+                </th>
+            </tr>
+
+        <tbody>
+            @foreach (User displayObject in Model)
+            {
+                <tr>
+                    <td>
+                        @displayObject.UserName
+                    </td>
+                    <td>
+                        @displayObject.RoleName
+                    </td>
+                    @if ((long?)Session["RoleId"] == 5)
+                    {
+                        <td>
+                            @Html.ActionLink("User Details", "UserDetails", "Account", new { username = displayObject.UserName }, null)
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</div>
+

@@ -1,0 +1,7 @@
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\obj\Debug\Gamestore-DAL.csproj.CoreCompileInputs.cache
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\bin\Debug\Gamestore-DAL.dll.config
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\bin\Debug\Gamestore-DAL.dll
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\bin\Debug\Gamestore-DAL.pdb
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\obj\Debug\Gamestore-DAL.dll
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\obj\Debug\Gamestore-DAL.pdb
+c:\users\rwilliams\source\repos\Gamestore-MVC\Gamestore-DAL\obj\Debug\Gamestore-DAL.csprojAssemblyReference.cache

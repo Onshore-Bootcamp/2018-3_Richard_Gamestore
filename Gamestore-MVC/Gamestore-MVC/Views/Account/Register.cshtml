@@ -1,0 +1,33 @@
+﻿@using Gamestore_MVC.Models
+@model User
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <h2 class="align-center">Register</h2>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            @Html.LabelFor(model => Model.UserName)
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.UserName, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => Model.Password)
+            <div class="form-group">
+                @Html.PasswordFor(model => Model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Password, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => Model.Email)
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Email, $"{TempData["Email Error Message"]}", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" value="Register" />
+            </div>
+        </div>
+    }
+</div>
+    
